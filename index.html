@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div>
+    <div id="fiv">
         <input type="text" size="38" placeholder="Room" id="BotRoom" name="BotRoom" /><br>
         <div id="leftMenu">
             <input type="checkbox" id="roomVisible" checked="true" name="roomVisible" value="Visible">Visible</input>
@@ -20,7 +20,8 @@
             <input type="color" id="color" onchange="clickColor(0, -1, -1, 5)" value="#3B5054" style="width:15px;">
         </div>
         <div id="buttons">
-            <button id="connect">Connect</button><br>
+            <button id="connect">Connect</button>
+            <input type="checkbox" id="rainbowGUI" name="rainbowGUI" value="rainbowGUI">Rainbow GUI</input><br>
             <button id="disconnect">Disconnect</button>
             <label for="uploadMidi"></label>
             <input on type="file" id="midifile" name="midifile">
