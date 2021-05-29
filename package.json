@@ -9,7 +9,7 @@
         "ws": "^7.4.5"
     },
     "devDependencies": {
-        "electron": "^14.0.0-beta.1"
+        "electron": "^13.0.1"
     },
     "name": "nmpb-v2",
     "version": "2.0.0",
