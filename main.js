@@ -6,7 +6,7 @@ document.getElementById('disconnect').onclick = disconnect;
 const client = new Client(wss)
 
 var wss = null;
-var botName = "Anonymous";
+var botName = "";
 var clientsName = "NMPB (Socket)";
 
 var clients = [];
