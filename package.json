@@ -1,0 +1,27 @@
+{
+    "dependencies": {
+        "download-file": "^0.1.5",
+        "fs": "*",
+        "https-proxy-agent": "^5.0.0",
+        "midi-player-js": "^2.0.14",
+        "nexe": "^4.0.0-beta.18",
+        "socks-proxy-agent": "^5.0.0",
+        "ws": "^7.4.5"
+    },
+    "devDependencies": {
+        "electron": "^14.0.0-beta.1"
+    },
+    "name": "nmpb-v2",
+    "version": "2.0.0",
+    "main": "index.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "keywords": [
+        "nmpb",
+        "mpp"
+    ],
+    "author": "Phoenix",
+    "license": "ISC",
+    "description": ""
+}

@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>NMPB v2 Node.js</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <input type="text" size="38" placeholder="Room" id="BotRoom" name="BotRoom" /><br>
+        <div id="leftMenu">
+            <input type="checkbox" id="roomVisible" checked="true" name="roomVisible" value="Visible">Visible</input>
+            <input type="checkbox" id="chatEnabled" checked="true" name="chatEnabled" value="Chat">Chat</input>
+            <input type="checkbox" id="isSolo" name="isSolo" value="Solo">Solo</input>
+            <input type="checkbox" id="isTurns" name="isTurns" value="Turns">Turns</input>
+            <input type="color" id="color" onchange="clickColor(0, -1, -1, 5)" value="#3B5054" style="width:15px;">
+        </div>
+        <div id="buttons">
+            <button id="connect">Connect</button><br>
+            <button id="disconnect">Disconnect</button>
+            <label for="uploadMidi"></label>
+            <input on type="file" id="midifile" name="midifile">
+        </div>
+        <div id="chatButtons">
+            <input type="checkbox" checked="true" id="sendChat">Send Chat</input><br>
+            <input type="checkbox" checked="true" id="receiveChat">Receive Chat</input><br>
+            <input type="checkbox" checked="true" id="scrlChat">Scroll Chat</input><br>
+        </div>
+        <div>
+            <textarea class="scrollabletextbox" id="chatLog" name="logger"></textarea>
+        </div>
+        <div>
+            <input type="text" placeholder="send" id="sendToChat" /><br>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script src="./main.js"></script>

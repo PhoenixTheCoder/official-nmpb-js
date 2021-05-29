@@ -1,0 +1,45 @@
+#BotRoom {
+    size: 100px;
+}
+
+#leftMenu input {
+    margin-top: 8px;
+}
+
+body,
+html {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 11pt;
+}
+
+#buttons {
+    margin-left: 320;
+    margin-top: -50px;
+}
+
+#chatButtons {
+    margin-left: 630;
+    margin-top: -50px;
+}
+
+#receiveChat {
+    margin-top: -5px;
+}
+
+#disconnect {
+    margin-top: 5px;
+}
+
+.scrollabletextbox {
+    height: 240px;
+    margin-top: 5px;
+    width: 750px;
+    font-family: Verdana, Tahoma, Arial, Helvetica, sans-serif;
+    font-size: 82%;
+    overflow: scroll;
+}
+
+#sendToChat {
+    margin-top: 4px;
+    width: 750px;
+}
