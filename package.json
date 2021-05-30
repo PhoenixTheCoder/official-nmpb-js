@@ -3,6 +3,7 @@
         "download-file": "^0.1.5",
         "fs": "*",
         "https-proxy-agent": "^5.0.0",
+        "jquery": "^3.6.0",
         "midi-player-js": "^2.0.14",
         "nexe": "^4.0.0-beta.18",
         "socks-proxy-agent": "^5.0.0",

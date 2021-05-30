@@ -1,5 +1,7 @@
 const Client = require('./Client');
 const fs = require('fs');
+let $ = require('jquery');
+window.$ = $;
 
 document.getElementById('connect').onclick = start;
 document.getElementById('disconnect').onclick = disconnect;
@@ -78,6 +80,23 @@ document.getElementById('midifile').onchange = function upload() {
             Player.play();
         })
     });
+}
+
+function loadMidiFile(songName) {
+    Player.stop();
+    Player.loadFile(`./midis/${songName}`);
+    Player.play();
+}
+
+window.onload = function loadMidis() {
+    let midiFiles = fs.readdirSync('./midis/');
+
+    midiFiles.map(midiFile => {
+        $(`#MidiList`).append(`<option id="${midiFile}" value="${midiFile}">${midiFile}</option>`);
+        document.getElementById(`${midiFile}`).addEventListener('dblclick', () => {
+            loadMidiFile(document.getElementById(`${midiFile}`).value);
+        })
+    })
 }
 document.getElementById('isTurns').addEventListener('change', () => {
     if (document.getElementById('isTurns').checked) {
@@ -173,49 +192,6 @@ document.getElementById('chatEnabled').addEventListener('change', () => {
         client.sendArray([{ m: 'chset', set: { chat: false } }]);
     }
 })
-
-/*document.getElementById('rainbowGUI').addEventListener('change', () => {
-    if (document.getElementById('rainbowGUI').checked) {
-        var count = 0;
-        var size = 128;
-        var rainbow = new Array(size);
-
-
-        for (var i = 0; i < size; i++) {
-            var red = sin_to_hex(i, 0 * Math.PI * 2 / 3); // 0   deg
-            var blue = sin_to_hex(i, 1 * Math.PI * 2 / 3); // 120 deg
-            var green = sin_to_hex(i, 2 * Math.PI * 2 / 3); // 240 deg
-
-
-            rainbow[i] = "#" + red + green + blue;
-        }
-
-
-        function sin_to_hex(i, phase) {
-            var sin = Math.sin(Math.PI / size * 2 * i + phase);
-            var int = Math.floor(sin * 127) + 128;
-            var hex = int.toString(16);
-
-
-            return hex.length === 1 ? "0" + hex : hex;
-        }
-        meow = setInterval(function() {
-            if (count > rainbow.length) count = 0;
-            document.getElementById('buttons').style.backgroundColor = rainbow[count];
-            document.getElementById('leftMenu').style.backgroundColor = rainbow[count];
-            document.getElementById('chatButtons').style.backgroundColor = rainbow[count];
-            document.getElementById('fiv').style.backgroundColor = rainbow[count];
-            count++;
-        }, 33);
-    } else {
-        checkedUI = false;
-        clearInterval(meow);
-        document.getElementById('buttons').style.backgroundColor = "#FFFFFF";
-        document.getElementById('leftMenu').style.backgroundColor = "#FFFFFF";
-        document.getElementById('chatButtons').style.backgroundColor = "#FFFFFF";
-        document.getElementById('fiv').style.backgroundColor = "#FFFFFF";
-    }
-})*/
 
 document.getElementById('color').addEventListener('change', () => {
     client.sendArray([{ m: 'chset', set: { color: document.getElementById('color').value } }])

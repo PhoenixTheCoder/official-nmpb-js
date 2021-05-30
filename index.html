@@ -7,6 +7,7 @@
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <title>NMPB v2 Node.js</title>
     <link rel="stylesheet" href="style.css">
+    <script src="./jquery.js" onload="window.$ = window.jQuery = module.exports;"></script>
 </head>
 
 <body>
@@ -36,6 +37,10 @@
         </div>
         <div>
             <input type="text" placeholder="send" id="sendToChat" /><br>
+        </div>
+        <div>
+            <select id="MidiList" Name="MidiList" Size="50000">
+            </select>
         </div>
     </div>
 </body>
