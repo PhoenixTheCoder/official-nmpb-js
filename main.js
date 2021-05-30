@@ -73,7 +73,10 @@ document.getElementById('midifile').onchange = function upload() {
     //document.getElementById('midifile').files;
     console.log(document.getElementById('midifile').files)
     fs.readFile(document.getElementById('midifile').files[0].path, (err, data) => {
-        fs.writeFile('./midis/' + document.getElementById('midifile').files[0].name, data, () => {})
+        fs.writeFile('./midis/' + document.getElementById('midifile').files[0].name, data, () => {
+            Player.loadFile(`./midis/${document.getElementById('midifile').files[0].name}`);
+            Player.play();
+        })
     });
 }
 document.getElementById('isTurns').addEventListener('change', () => {
@@ -171,7 +174,7 @@ document.getElementById('chatEnabled').addEventListener('change', () => {
     }
 })
 
-document.getElementById('rainbowGUI').addEventListener('change', () => {
+/*document.getElementById('rainbowGUI').addEventListener('change', () => {
     if (document.getElementById('rainbowGUI').checked) {
         var count = 0;
         var size = 128;
@@ -212,7 +215,7 @@ document.getElementById('rainbowGUI').addEventListener('change', () => {
         document.getElementById('chatButtons').style.backgroundColor = "#FFFFFF";
         document.getElementById('fiv').style.backgroundColor = "#FFFFFF";
     }
-})
+})*/
 
 document.getElementById('color').addEventListener('change', () => {
     client.sendArray([{ m: 'chset', set: { color: document.getElementById('color').value } }])
@@ -452,11 +455,11 @@ client.on('a', msg => {
             if (solo == true) {
                 solo = false;
                 sendChat('Solo is off.');
-                client.sendArray([{ m: 'chset', set: { crownsolo: false, color: "#000000" } }]);
+                client.sendArray([{ m: 'chset', set: { crownsolo: false } }]);
             } else {
                 solo = true;
                 sendChat('Solo is now on.');
-                client.sendArray([{ m: 'chset', set: { crownsolo: true, color: "#000000" } }]);
+                client.sendArray([{ m: 'chset', set: { crownsolo: true } }]);
             }
         }
     }
