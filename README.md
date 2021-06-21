@@ -1,7 +1,7 @@
 ﻿# official-nmpb-js
 
 ### Requirements
-(Node.js)[https://nodejs.org/en/]
+[Node.js](https://nodejs.org/en/)
 Run install-dependancies.bat and that will install everything you need.
 
 ### How to run
