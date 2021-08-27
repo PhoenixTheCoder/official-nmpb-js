@@ -114,7 +114,7 @@ Client.prototype.connect = function() {
     });
     this.ws.addEventListener("open", function(evt) {
         self.connectionTime = Date.now();
-        self.sendArray([{ m: "hi", token: "phoenixnmpb-qNIm4zlVySNPL5afoCE8U9DL0PCeUMnb0whC68G7ce2ALcanKA4EEaf1Y2q3wKVy" }]);
+        self.sendArray([{ m: "hi", token: "3fdaf64304ed373b51a5a5a7.3a638696-b48f-4c07-b167-df42de497ed3" }]);
         self.pingInterval = setInterval(function() {
             self.sendArray([{ m: "t", e: Date.now() }]);
         }, 20000);
